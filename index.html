@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Hawthornlands: Your trusted real estate partner for land and homes nationwide. Explore premium rural properties with expert guidance.">
+    <meta name="keywords" content="real estate, land for sale, houses, rural properties, Hawthornlands, investment">
+    <meta name="author" content="Hawthornlands">
+    <title>Hawthornlands - Real Estate Investment</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+        .slides {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            flex: 0 0 100%;
+            min-width: 100%;
+            height: auto;
+            max-height: 24rem;
+            object-fit: contain;
+            object-position: center;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .nav-button {
+            transition: background-color 0.3s ease;
+            background-color: #6B4E31;
+        }
+        .nav-button:hover {
+            background-color: #4A5D23;
+        }
+        .nav-button.active {
+            background-color: #4A5D23;
+        }
+        .testimonial-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .testimonial-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        .header-image {
+            max-width: 150px;
+            height: auto;
+            margin-right: 20px;
+        }
+        .sold-badge {
+            background-color: #9ca3af;
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-gradient-to-r from-[#8B4513] to-[#556B2F] text-white py-4">
+        <div class="container mx-auto px-4 flex items-center">
+            <img src="https://raw.githubusercontent.com/danc5300/Hawthornlands.com/main/Hawthorn%20Tree.jpg" alt="Hawthorn Tree" class="header-image">
+            <div class="text-center">
+                <h1 class="text-4xl font-bold mx-auto">Hawthornlands.com</h1>
+                <p class="text-lg italic text-white">Your Partner for rural land and homes</p>
+            </div>
+            <div class="text-right ml-auto">
+                <p>Contact Us:</p>
+                <p>Dan Cramer</p>
+                <p>Dan@Hawthornlands.com</p>
+                <p>Phone: 269-322-2255</p>
+            </div>
+        </div>
+        <nav class="bg-[#6B4E31] text-white py-3 mt-4">
+            <div class="container mx-auto px-4 flex justify-center space-x-4">
+                <a href="index.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg active">Home</a>
+                <a href="properties.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Properties for Sale</a>
+                <a href="resources.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Resources</a>
+                <a href="testimonials.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Testimonials</a>
+                <a href="contact.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Contact</a>
+                <a href="about.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">About</a>
+                <a href="blog.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Blog</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Image Slider with CTA -->
+    <section class="slider relative">
+        <div class="slides">
+            <img src="https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Aerial view of suburban neighborhood with homes and green spaces" class="w-full max-h-96 object-contain">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=800&q=80" alt="Scenic rural land with rolling hills" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/1396122/pexels-photo-1396122.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Country cottage with surrounding land" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/2882234/pexels-photo-2882234.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Jeep Wrangler on rugged rural gravel road" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Vacant country land with open meadow" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Suburban house with large lot" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/618848/pexels-photo-618848.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Camping scene on open land" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/209296/pexels-photo-209296.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Good old fashioned farmhouse in rural setting" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Rural terrain" class="w-full max-h-96 object-contain">
+            <img src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=1200&h=800" alt="Rustic farmhouse exterior in rural setting" class="w-full max-h-96 object-contain">
+        </div>
+        <div class="absolute bottom-5 left-1/2 transform -translate-x-1/2 bg-black/50 text-white px-6 py-3 rounded-lg">
+            <a href="properties.html" class="text-white no-underline hover:text-orange-400">View Properties</a>
+        </div>
+        <div class="prev">❮</div>
+        <div class="next">❯</div>
+    </section>
+
+    <!-- Properties Section -->
+    <main class="container mx-auto px-4 py-8">
+        <section class="my-12" id="featured">
+            <h2 class="text-3xl font-semibold text-green-800 mb-4">Featured Properties</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Rural land" class="w-full h-48 object-cover rounded">
+                    <h3 class="text-xl font-semibold mt-2">20-Acre Rural Plot</h3>
+                    <p class="text-gray-600">$75,000 - Perfect for farming or retreat.</p>
+                    <div class="mt-4">
+                        <a href="property1.html" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.pexels.com/photos/1546168/pexels-photo-1546168.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Rural house" class="w-full h-48 object-cover rounded">
+                    <h3 class="text-xl font-semibold mt-2">3-Bedroom Home with Lot</h3>
+                    <p class="text-gray-600">$250,000 - Modern home with 5 acres.</p>
+                    <div class="mt-4">
+                        <a href="property2.html" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">Learn More</a>
+                    </div>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow hover:scale-105 transition-transform duration-300">
+                    <img src="https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=600&h=400" alt="Suburban land" class="w-full h-48 object-cover rounded">
+                    <h3 class="text-xl font-semibold mt-2">10-Acre Wooded Lot</h3>
+                    <p class="text-gray-600">$50,000 - Ideal for privacy or hunting.</p>
+                    <div class="mt-4">
+                        <a href="property3.html" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">Learn More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-6">
+                <a href="properties.html" class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600">Browse All Properties</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sold Property Section at Bottom -->
+    <section class="my-12 bg-white p-6 rounded-lg shadow mx-auto max-w-4xl">
+        <h2 class="text-2xl font-semibold text-green-800 mb-4">Recently Sold</h2>
+        <div class="flex flex-col md:flex-row items-center">
+            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=400&h=300" alt="Front view of 8172 Engelwood Ave" class="w-full md:w-1/3 h-48 object-cover rounded-lg">
+            <div class="md:ml-6 mt-4 md:mt-0">
+                <h3 class="text-xl font-semibold">8172 Engelwood Ave, Richland, MI 49083</h3>
+                <p class="text-gray-600">Sold for $368,900</p>
+                <p class="text-gray-600">4 beds | 2,244 sqft | 0.33 Acres</p>
+                <span class="sold-badge">Sold</span>
+                <p class="text-gray-600 mt-2">Charming 4-bedroom, 2.5-bathroom home in Richland. Updated with new floors and paint, offering 2,244 sqft of modern living space. Listed by Steven Koleno, Beycome Brokerage Realty LLC.</p>
+                <a href="https://www.zillow.com/homedetails/8172-Engelwood-Ave-Richland-MI-49083/126679707_zpid/" class="mt-2 inline-block bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">View Details</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="my-12">
+        <h2 class="text-3xl font-semibold text-green-800 mb-4 text-center">What Our Clients Say</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 container mx-auto px-4">
+            <div class="testimonial-card bg-white p-4 rounded-lg shadow">
+                <p class="text-gray-600 italic">"The team at Hawthornlands made the process so easy and professional. I felt confident every step of the way!"</p>
+                <p class="text-green-800 font-semibold mt-2">- Sarah T., Texas</p>
+            </div>
+            <div class="testimonial-card bg-white p-4 rounded-lg shadow">
+                <p class="text-gray-600 italic">"Working with them was a great experience—quick, reliable, and always available to answer my questions."</p>
+                <p class="text-green-800 font-semibold mt-2">- Michael R., California</p>
+            </div>
+        </div>
+        <p class="text-center text-sm text-gray-500 mt-6">*Testimonials are from actual clients and may not be representative of all experiences.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-green-800 text-white py-4">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2025 Hawthornlands. All rights reserved.</p>
+            <p>Follow us: <a href="#" class="underline">Facebook</a> | <a href="#" class="underline">Instagram</a></p>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Slider with Pause on Hover -->
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector('.slides');
+        const images = document.querySelectorAll('.slides img');
+        const totalSlides = images.length;
+        let slideInterval;
+
+        function showSlides() {
+            slideIndex++;
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+        }
+
+        function startSlider() {
+            slideInterval = setInterval(showSlides, 5000);
+        }
+
+        function pauseSlider() {
+            clearInterval(slideInterval);
+        }
+
+        startSlider();
+
+        document.querySelector('.slider').addEventListener('mouseover', pauseSlider);
+        document.querySelector('.slider').addEventListener('mouseleave', startSlider);
+
+        document.querySelector('.prev').addEventListener('click', () => {
+            slideIndex--;
+            if (slideIndex < 0) slideIndex = totalSlides - 1;
+            slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+            pauseSlider();
+        });
+
+        document.querySelector('.next').addEventListener('click', () => {
+            slideIndex++;
+            if (slideIndex >= totalSlides) slideIndex = 0;
+            slides.style.transform = `translateX(${-slideIndex * 100}%)`;
+            pauseSlider();
+        });
+    </script>
+</body>
+</html>

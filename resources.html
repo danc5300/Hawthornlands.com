@@ -3,44 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Access valuable real estate resources from Hawthornlands for land and home buyers nationwide. Tips, insights, sales data, and links for property buyers and investors.">
-    <meta name="keywords" content="real estate resources, housing sales data, land trends, Hawthornlands, market insights">
+    <meta name="description" content="Find valuable resources at Hawthornlands for real estate investment and property management.">
+    <meta name="keywords" content="real estate resources, investment tips, property management, Hawthornlands">
     <meta name="author" content="Hawthornlands">
-    <title>Resources - Hawthornlands</title>
+    <title>Hawthornlands - Resources</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        .slider {
-            position: relative;
-            width: 100%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
-        }
-        .slides {
-            display: flex;
-            width: 100%;
-            transition: transform 0.5s ease-in-out;
-        }
-        .slides img {
-            flex: 0 0 100%;
-            min-width: 100%;
+        .header-image {
+            max-width: 150px;
             height: auto;
-            max-height: 24rem;
-            object-fit: contain;
-            object-position: center;
+            margin-right: 0;
         }
-        .prev, .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            padding: 10px;
-            cursor: pointer;
-            z-index: 10;
-        }
-        .prev { left: 10px; }
-        .next { right: 10px; }
         .nav-button {
             transition: background-color 0.3s ease;
             background-color: #6B4E31;
@@ -58,132 +31,113 @@
             transform: scale(1.05);
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
-        .header-image {
-            max-width: 150px;
-            height: auto;
-            margin-right: 20px;
+        .mobile-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: #6B4E31;
+            padding: 1rem;
+            z-index: 20;
         }
-        .sold-badge {
-            background-color: #9ca3af;
-            color: white;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.375rem;
-            font-size: 0.875rem;
-            font-weight: bold;
+        .mobile-menu.active {
+            display: block;
+        }
+        .nav-toggle {
+            display: none;
+        }
+        @media (max-width: 767px) {
+            .nav-toggle {
+                display: block;
+                font-size: 1.5rem;
+                background: none;
+                border: none;
+                color: white;
+                cursor: pointer;
+            }
+            .nav-links {
+                display: none;
+            }
+            .nav-links.active {
+                display: flex;
+                flex-direction: column;
+                gap: 0.5rem;
+            }
         }
     </style>
 </head>
 <body class="bg-gray-100 font-sans">
-    <!-- Header -->
     <header class="bg-gradient-to-r from-[#8B4513] to-[#556B2F] text-white py-4">
-        <div class="container mx-auto px-4 flex items-center">
-            <img src="https://raw.githubusercontent.com/danc5300/Hawthornlands.com/main/Hawthorn%20Tree.jpg" alt="Hawthorn Tree" class="header-image">
-            <div class="text-center">
-                <h1 class="text-4xl font-bold mx-auto">Hawthornlands.com</h1>
-                <p class="text-lg italic text-white">Your Partner for rural land and homes</p>
+        <div class="container mx-auto px-2 md:px-4 flex flex-col md:flex-row items-center gap-2 md:gap-4 flex-wrap">
+            <a href="index.html">
+                <img src="https://raw.githubusercontent.com/danc5300/Hawthornlands.com/main/Hawthorn%20Tree.jpg" alt="Hawthorn Tree" class="header-image">
+            </a>
+            <div class="text-center md:text-left flex-grow">
+                <a href="index.html">
+                    <h1 class="text-3xl md:text-4xl font-bold mx-auto md:mx-0 hover:text-gray-200 transition-colors">Hawthornlands.com</h1>
+                </a>
+                <p class="text-base md:text-lg italic text-white">Your Partner for rural land and homes</p>
             </div>
-            <div class="text-right ml-auto">
+            <div class="text-right md:text-right ml-auto text-sm md:text-base">
                 <p>Contact Us:</p>
                 <p>Dan Cramer</p>
                 <p>Dan@Hawthornlands.com</p>
                 <p>Phone: 269-322-2255</p>
             </div>
+            <button class="nav-toggle md:hidden self-end bg-[#6B4E31] text-white px-3 py-1 rounded-lg flex items-center gap-1" id="nav-toggle">Menu ☰</button>
         </div>
-        <nav class="bg-[#6B4E31] text-white py-3 mt-4">
-            <div class="container mx-auto px-4 flex justify-center space-x-4">
-                <a href="index.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Home</a>
-                <a href="properties.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Properties for Sale</a>
-                <a href="resources.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg active">Resources</a>
-                <a href="testimonials.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Testimonials</a>
-                <a href="contact.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Contact</a>
-                <a href="about.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">About</a>
-                <a href="blog.html" class="nav-button bg-[#6B4E31] text-white px-4 py-2 rounded-lg">Blog</a>
+        <nav class="bg-[#6B4E31] text-white py-3 mt-2 md:mt-4">
+            <div class="container mx-auto px-2 md:px-4">
+                <div class="nav-links md:flex md:justify-center md:space-x-2 md:space-x-4" id="nav-links">
+                    <a href="index.html" class="nav-button bg-[#6B4E31] text-white px-2 md:px-4 py-1 md:py-2 rounded-lg">Home</a>
+                    <a href="properties.html" class="nav-button bg-[#6B4E31] text-white px-2 md:px-4 py-1 md:py-2 rounded-lg">Properties for Sale</a>
+                    <a href="resources.html" class="nav-button bg-[#6B4E31] text-white px-2 md:px-4 py-1 md:py-2 rounded-lg active">Resources</a>
+                    <a href="testimonials.html" class="nav-button bg-[#6B4E31] text-white px-2 md:px-4 py-1 md:py-2 rounded-lg">Testimonials</a>
+                    <a href="contact.html" class="nav-button bg-[#6B4E31] text-white px-2 md:px-4 py-1 md:py-2 rounded-lg">Contact</a>
+                    <a href="about.html" class="nav-button bg-[#6B4E31] text-white px-2 md:px-4 py-1 md:py-2 rounded-lg">About</a>
+                    <a href="blog.html" class="nav-button bg-[#6B4E31] text-white px-2 md:px-4 py-1 md:py-2 rounded-lg">Blog</a>
+                </div>
             </div>
         </nav>
     </header>
 
-    <!-- Main Content -->
     <main class="container mx-auto px-4 py-8">
         <section class="my-12">
             <h2 class="text-3xl font-semibold text-green-800 mb-4">Resources</h2>
-            <p class="text-gray-700 mb-6">Explore helpful information and tools for your real estate journey with Hawthornlands.</p>
-
-            <!-- Search Placeholder -->
-            <div class="mb-6">
-                <input type="text" placeholder="Search resources..." class="p-2 rounded-lg border border-gray-300 w-full md:w-1/2">
-            </div>
-
-            <!-- Resource Categories -->
-            <div class="space-y-6">
-                <!-- Real Estate Tips -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-green-800 mb-2">Real Estate Tips</h3>
-                    <ul class="space-y-2">
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">📝</span> <a href="https://www.ers.usda.gov/topics/farm-economy/land-use-land-value-tenure/major-land-uses" target="_blank" class="text-orange-500 hover:underline">Major Land Uses in the U.S.</a> - Comprehensive USDA data on how land is used, including cropland and pasture.
-                        </li>
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">📝</span> <a href="https://ourworldindata.org/land-use" target="_blank" class="text-orange-500 hover:underline">Land Use Worldwide</a> - Global statistics on land usage, including agriculture and urbanization.
-                        </li>
-                    </ul>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="resource-card bg-white p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mt-2">Investment Guide</h3>
+                    <p class="text-gray-600">Learn how to invest in rural properties with our expert tips.</p>
+                    <div class="mt-4">
+                        <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">Read More</a>
+                    </div>
                 </div>
-
-                <!-- Market Insights -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-green-800 mb-2">Market Insights</h3>
-                    <ul class="space-y-2">
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">📊</span> <a href="https://www.afmrealestate.com/news/farmland-trends-2024-insights-and-2025-outlook" target="_blank" class="text-orange-500 hover:underline">Farmland Trends: 2024 Insights and 2025 Outlook</a> - AFM Real Estate's projections on crop production and hotspots.
-                        </li>
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">📊</span> <a href="https://www.fb.org/market-intel/real-estate-rising-farmland-values-hit-record-high" target="_blank" class="text-orange-500 hover:underline">Farmland Values Hit Record High (2025)</a> - USDA report on rising rural land values and trends.
-                        </li>
-                    </ul>
+                <div class="resource-card bg-white p-4 rounded-lg shadow">
+                    <h3 class="text-xl font-semibold mt-2">Market Trends</h3>
+                    <p class="text-gray-600">Stay updated on the latest real estate market trends.</p>
+                    <div class="mt-4">
+                        <a href="#" class="bg-orange-500 text-white px-4 py-2 rounded-lg hover:bg-orange-600">Read More</a>
+                    </div>
                 </div>
-
-                <!-- Housing Sales Data -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-green-800 mb-2">Housing Sales Data</h3>
-                    <ul class="space-y-2">
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">📈</span> <a href="https://www.census.gov/construction/nrs/pdf/newressales.pdf" target="_blank" class="text-orange-500 hover:underline">Monthly New Residential Sales (U.S. Census)</a> - August 2025 data: New single-family homes sold at 800,000 annual rate, up 4.6% month-over-month.
-                        </li>
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">📈</span> <a href="https://fred.stlouisfed.org/series/MSPUS" target="_blank" class="text-orange-500 hover:underline">Median Sales Price of Houses Sold (FRED)</a> - Q2 2025 median price $439,419, up 0.5% year-over-year.
-                        </li>
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">📈</span> <a href="https://www.freddiemac.com/pmms/pmms_archives?year=2025&month=8" target="_blank" class="text-orange-500 hover:underline">Primary Mortgage Market Survey (Freddie Mac)</a> - August 2025 30-year fixed-rate mortgage at 6.35%, influencing housing sales trends.
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Useful Links -->
-                <div>
-                    <h3 class="text-2xl font-semibold text-green-800 mb-2">Useful Links</h3>
-                    <ul class="space-y-2">
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">🔗</span> <a href="https://www.ers.usda.gov/data-products/major-land-uses" target="_blank" class="text-orange-500 hover:underline">Major Land Uses Data (USDA ERS)</a> - Detailed U.S. land use estimates since 1945.
-                        </li>
-                        <li class="resource-card bg-white p-4 rounded-lg shadow">
-                            <span class="text-gray-600 mr-2">🔗</span> <a href="https://www.usgs.gov/centers/eros/science/national-land-cover-database" target="_blank" class="text-orange-500 hover:underline">National Land Cover Database (USGS)</a> - Satellite-based land cover statistics for the U.S.
-                        </li>
-                    </ul>
-                </div>
-            </div>
-
-            <!-- Call to Action -->
-            <div class="text-center my-12">
-                <a href="contact.html" class="bg-orange-500 text-white px-6 py-3 rounded-lg hover:bg-orange-600">Contact Us for More Resources</a>
             </div>
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-green-800 text-white py-4">
         <div class="container mx-auto px-4 text-center">
             <p>&copy; 2025 Hawthornlands. All rights reserved.</p>
             <p>Follow us: <a href="#" class="underline">Facebook</a> | <a href="#" class="underline">Instagram</a></p>
         </div>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        navToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>

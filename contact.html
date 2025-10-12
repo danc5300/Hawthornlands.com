@@ -58,15 +58,13 @@
                 gap: 0.5rem;
             }
         }
-        /* Hide Google Forms header */
+        /* Attempt to hide Google Forms header */
         iframe[src*="google.com/forms"] {
-            height: 500px; /* Adjusted height to fit content without scrolling */
+            height: 400px; /* Reduced height to minimize header visibility */
+            overflow: hidden; /* Prevent scrolling to hidden header */
         }
-        iframe[src*="google.com/forms"] .freebirdFormviewerViewHeaderHeader {
-            display: none !important;
-        }
-        iframe[src*="google.com/forms"] .freebirdFormviewerViewNavigationNavControls {
-            display: none !important;
+        iframe[src*="google.com/forms"] > * {
+            margin-top: -50px; /* Adjust to pull content up (approximate offset) */
         }
     </style>
 </head>
@@ -112,7 +110,7 @@
 
             <!-- Google Form Embed -->
             <div class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow">
-                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc6jmR5-sUoiZ3vltpNrT1VqIomV1yRfMzK6pd7Ngm-A0kqgg/viewform?embedded=true" width="100%" height="500" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc6jmR5-sUoiZ3vltpNrT1VqIomV1yRfMzK6pd7Ngm-A0kqgg/viewform?embedded=true" width="100%" height="400" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
             </div>
 
             <!-- Contact Information -->

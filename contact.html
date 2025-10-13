@@ -32,10 +32,12 @@
             right: 0;
             background-color: #6B4E31;
             padding: 1rem;
-            z-index: 20;
+            z-index: 30; /* Increased z-index to ensure it appears over iframe */
         }
         .mobile-menu.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
         .nav-toggle {
             display: none;
@@ -49,21 +51,24 @@
                 color: white;
                 cursor: pointer;
                 padding: 0.5rem;
+                z-index: 40; /* Ensure button is clickable over other elements */
             }
             .nav-links {
                 display: none;
                 flex-direction: column;
                 width: 100%;
+                padding: 0;
+                margin: 0;
             }
             .nav-links.active {
                 display: flex;
-                gap: 0.5rem;
             }
         }
-        /* Adjust iframe to fit content */
+        /* Adjust iframe to avoid interference */
         iframe[src*="google.com/forms"] {
             height: 600px;
             overflow: hidden;
+            z-index: 10; /* Lower z-index to stay behind menu */
         }
     </style>
 </head>
@@ -132,16 +137,18 @@
     </footer>
 
     <script>
-        const navToggle = document.getElementById('nav-toggle');
-        const navLinks = document.getElementById('nav-links');
+        document.addEventListener('DOMContentLoaded', () => {
+            const navToggle = document.getElementById('nav-toggle');
+            const navLinks = document.getElementById('nav-links');
 
-        if (navToggle && navLinks) {
-            navToggle.addEventListener('click', () => {
-                navLinks.classList.toggle('active');
-            });
-        } else {
-            console.log('Error: nav-toggle or nav-links not found');
-        }
+            if (navToggle && navLinks) {
+                navToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                });
+            } else {
+                console.log('Error: nav-toggle or nav-links not found');
+            }
+        });
     </script>
 </body>
 </html>
